@@ -1,0 +1,45 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "My API For Rates Current",
+      "description": "My API For Rates Current",
+      "version": "1.0.0"
+    },
+    "paths": {
+      "/customers": {
+        "get": {
+          "summary": "Get history exchanges",
+          "responses": {
+            "200": {
+              "description": "List of exchanges",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Customer"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "components": {
+      "schemas": {
+        "Customer": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "name": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
